@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "coffeescript": "^1.12.7",
+    "hubot": "^3.5.0",
+    "hubot-ambush": "^0.0.3",
+    "hubot-diagnostics": "^1.0.0",
+    "hubot-google-images": "^0.2.7",
+    "hubot-google-translate": "^0.2.1",
+    "hubot-help": "^1.0.1",
+    "hubot-maps": "^0.0.3",
+    "hubot-pugme": "^0.1.1",
+    "hubot-redis-brain": "^1.0.0",
+    "hubot-rules": "^1.0.0",
+    "hubot-salt": "^0.0.1-alpha.1.1",
+    "hubot-shipit": "^0.2.1",
+    "hubot-slack": "^4.10.0",
+    "hubot-thank-you": "^0.0.3",
+    "hubot-youtube": "^1.2.6"
+  }
+}

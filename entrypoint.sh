@@ -2,6 +2,7 @@
 
 if [ -n "$EXTRA_PACKAGES" ]; then
   printf "\\n********* Installing extra packages *********\\n"
+  printf "${EXTRA_PACKAGES//,/ }\\n"
   npm install --save ${EXTRA_PACKAGES//,/ }
 fi
 

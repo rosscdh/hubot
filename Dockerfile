@@ -24,10 +24,10 @@ RUN addgroup -g 501 hubot\
  && adduser -D -h /hubot -u 501 -G hubot hubot
 ENV HOME /home/hubot
 WORKDIR $HOME
-COPY entrypoint.sh ./
+COPY . .
 RUN chown -R hubot:hubot .
 USER hubot
-
+RUN npm i
 # Install hubot version HUBOT_VERSION
 ENV HUBOT_NAME "robot"
 ENV HUBOT_OWNER "MindDoc <development@minddoc.com>"
@@ -38,12 +38,9 @@ RUN yo hubot\
  --name="$HUBOT_NAME"\
  --description="$HUBOT_DESCRIPTION"\
  --defaults
-ARG HUBOT_VERSION="3.5.0"
-RUN jq --arg HUBOT_VERSION "$HUBOT_VERSION" '.dependencies.hubot = $HUBOT_VERSION' package.json > /tmp/package.json\
- && mv /tmp/package.json .
 
 EXPOSE 80
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["bin/hubot"]
 
 CMD ["--name", "$HUBOT_NAME", "--adapter", "slack"]
